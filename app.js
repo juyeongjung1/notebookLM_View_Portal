@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filteredData.forEach((item, index) => {
       const delay = index * 0.05;
-      const isVideo = item.type === 'video';
+      const isVideo = item.type === 'video' || item.type === 'video-drive';
       const badgeClass = isVideo ? 'badge video' : 'badge audio';
       const badgeText = isVideo ? '動画' : '音声';
       const categoryText = item.category || 'その他';

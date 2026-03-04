@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
         <div class="admin-item-info">
           <strong>${item.title}</strong>
-          <span class="badge ${item.type === 'video' ? 'video' : 'audio'}">${item.type === 'video' ? '動画' : '音声'}</span>
+          <span class="badge ${(item.type === 'video' || item.type === 'video-drive') ? 'video' : 'audio'}">${(item.type === 'video' || item.type === 'video-drive') ? '動画' : '音声'}</span>
           <span class="badge category-badge">${item.category || 'その他'}</span>
           ${isStored ? '<span class="badge new-badge">新規</span>' : '<span class="badge base-badge">初期データ</span>'}
         </div>
