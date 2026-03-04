@@ -111,8 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
           </div>`;
+      } else if (driveId && isVideo) {
+        // Googleドライブの動画をiframeプレビューで埋め込み
+        mediaHtml = `
+          <div class="video-embed-container">
+            <iframe src="https://drive.google.com/file/d/${driveId}/preview" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen></iframe>
+          </div>`;
       } else if (driveId && !isVideo) {
-        // GoogleドライブのオーディオをHTMLプレイヤーで埋め込み
+        // Googleドライブの音声をHTMLプレイヤーで埋め込み
         mediaHtml = `
           <div class="audio-player">
             <audio controls preload="none">
