@@ -36,23 +36,88 @@
     <main class="container">
         <!-- フィルタリング用のタブエリア -->
         <section class="filter-section">
-            <div id="category-tabs" class="category-tabs">
-                <!-- JavaScriptで動的にタブが生成されます -->
-            </div>
+            <div id="category-tabs" class="category-tabs"></div>
         </section>
 
-        <section id="content-list" class="content-list">
-            <!-- JavaScriptで動的にコンテンツが生成されます -->
-        </section>
+        <section id="content-list" class="content-list"></section>
     </main>
 
     <footer class="footer">
         <p>&copy; 2026 研修プログラム. All rights reserved.</p>
+        <button id="admin-btn" class="admin-btn">🔧 管理者</button>
     </footer>
 
-    <!-- スクリプトの読み込み（data.js は app.js より前に読み込む） -->
+    <!-- ===== パスワード入力モーダル ===== -->
+    <div id="password-modal" class="modal-overlay">
+        <div class="modal-box">
+            <h2>管理者認証</h2>
+            <p>パスワードを入力してください。</p>
+            <input type="password" id="admin-password" class="modal-input" placeholder="パスワード">
+            <p id="password-error" class="modal-error" style="display:none;">パスワードが間違っています。</p>
+            <div class="modal-actions">
+                <button id="password-cancel" class="modal-btn cancel">キャンセル</button>
+                <button id="password-submit" class="modal-btn submit">認証</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 管理者パネル ===== -->
+    <div id="admin-panel" class="modal-overlay">
+        <div class="admin-panel-box">
+            <div class="admin-panel-header">
+                <h2>📋 コンテンツ管理</h2>
+                <button id="admin-close" class="admin-close-btn">&times;</button>
+            </div>
+
+            <!-- 新規追加フォーム -->
+            <form id="add-content-form" class="admin-form">
+                <h3>新規コンテンツの追加</h3>
+                <div class="form-group">
+                    <label for="input-title">タイトル</label>
+                    <input type="text" id="input-title" required placeholder="例：IT基礎-1章（解説動画）">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="input-category">カテゴリ</label>
+                        <input type="text" id="input-category" required placeholder="例：IT基礎">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-type">種類</label>
+                        <select id="input-type">
+                            <option value="video">動画（YouTube）</option>
+                            <option value="audio">音声（Googleドライブ）</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input-url">URL</label>
+                    <input type="url" id="input-url" required placeholder="例：https://www.youtube.com/watch?v=xxxxx">
+                </div>
+                <div class="form-group">
+                    <label for="input-desc">説明（任意）</label>
+                    <input type="text" id="input-desc" placeholder="例：復習用の動画です。">
+                </div>
+                <button type="submit" class="admin-submit-btn">＋ 追加する</button>
+            </form>
+
+            <!-- 登録済みコンテンツ一覧 -->
+            <div class="admin-list-section">
+                <h3>登録済みコンテンツ一覧</h3>
+                <div id="admin-item-list"></div>
+            </div>
+
+            <!-- エクスポートボタン -->
+            <div class="admin-export-section">
+                <button id="export-btn" class="admin-export-btn">📥 data.js をダウンロード（GitHub反映用）</button>
+                <p class="export-note">ダウンロードした data.js をプロジェクトフォルダに上書き保存し、GitHubにPushすると全受講者に反映されます。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- スクリプトの読み込み -->
     <script src="data.js"></script>
     <script src="app.js"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>
