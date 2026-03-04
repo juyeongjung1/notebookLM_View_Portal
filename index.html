@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header-content">
@@ -19,8 +23,11 @@
     </header>
 
     <main class="container">
-        <section class="intro">
-            <p>※ 各テーマのボタンをタップすると、NotebookLMで生成された解説（動画・音声）が再生されます。</p>
+        <!-- フィルタリング用のタブエリア -->
+        <section class="filter-section">
+            <div id="category-tabs" class="category-tabs">
+                <!-- JavaScriptで動的にタブが生成されます -->
+            </div>
         </section>
 
         <section id="content-list" class="content-list">
@@ -36,4 +43,5 @@
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
