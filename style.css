@@ -1,0 +1,172 @@
+/* 
+  全体テーマ：モダン、クリーン、モバイルファースト
+  ベースカラー: 白〜ライトグレー
+  アクセントカラー: 落ち着いたブルー・パープル系（知的で学習しやすい色）
+*/
+
+:root {
+    --primary-color: #3b82f6; /* Tailwindのブルー系に近い色 */
+    --primary-hover: #2563eb;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    
+    /* バッジ用カラー */
+    --badge-video-bg: #fee2e2;
+    --badge-video-text: #b91c1c;
+    --badge-audio-bg: #e0e7ff;
+    --badge-audio-text: #4338ca;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- ヘッダー領域 --- */
+.header {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* --- メインコンテンツ --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- リスト・カードデザイン --- */
+.content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* PC等でのホバーアクション */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge.video {
+    background-color: var(--badge-video-bg);
+    color: var(--badge-video-text);
+}
+
+.badge.audio {
+    background-color: var(--badge-audio-bg);
+    color: var(--badge-audio-text);
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* 特大のタップしやすいボタン */
+.btn-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    /* タップエリアを最大限確保する */
+    touch-action: manipulation;
+}
+
+.btn-play:hover, .btn-play:active {
+    background-color: var(--primary-hover);
+}
+
+/* アイコン用 (SVGをCSSで描画またはインラインSVGを想定) */
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* --- フッター --- */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}

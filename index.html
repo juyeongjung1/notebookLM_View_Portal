@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研修復習用ポータル</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>研修復習ポータル</h1>
+            <p>いつでも・どこでも、超簡単に振り返り</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p>※ 各テーマのボタンをタップすると、NotebookLMで生成された解説（動画・音声）が再生されます。</p>
+        </section>
+
+        <section id="content-list" class="content-list">
+            <!-- JavaScriptで動的にコンテンツが生成されます -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 研修プログラム. All rights reserved.</p>
+    </footer>
+
+    <!-- スクリプトの読み込み（data.js は app.js より前に読み込む） -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
