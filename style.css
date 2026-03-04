@@ -5,9 +5,10 @@
 */
 
 :root {
-    --primary-color: #3b82f6;
-    /* Tailwindのブルー系に近い色 */
-    --primary-hover: #2563eb;
+    --primary-color: #e5401d;
+    /* 指定されたコーポレートカラー（オレンジ）に合わせる */
+    --primary-hover: #c02c13;
+    /* ホバー時の少し濃いオレンジ */
     --bg-color: #f3f4f6;
     --card-bg: #ffffff;
     --text-main: #1f2937;
@@ -37,13 +38,18 @@ body {
 
 /* --- ヘッダー領域 --- */
 .header {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    color: white;
-    padding: 3rem 1.5rem;
+    background: #ffffff;
+    color: var(--text-main);
+    padding: 2rem 1.5rem;
     text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom: 4px solid var(--primary-color);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo {
+    max-height: 40px;
+    margin-bottom: 1rem;
+    width: auto;
 }
 
 .header h1 {
